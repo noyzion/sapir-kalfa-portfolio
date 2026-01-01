@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  direction: ltr;
 }
 
 .nav-right {
@@ -63,7 +64,7 @@
   content: '';
   position: absolute;
   bottom: -5px;
-  right: 0;
+  left: 0;
   width: 0;
   height: 1px;
   background: var(--black);
@@ -130,7 +131,7 @@
   .nav-menu {
     position: fixed;
     top: 70px;
-    right: -100%;
+    left: -100%;
     flex-direction: column;
     background: var(--white);
     width: 100%;
@@ -139,10 +140,11 @@
     border-top: 1px solid var(--border-color);
     padding: 20px 0;
     gap: 0;
+    direction: ltr;
   }
 
   .nav-menu.active {
-    right: 0;
+    left: 0;
   }
 
   .nav-menu a {

@@ -28,7 +28,7 @@ function Navigation() {
   }
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} dir="ltr">
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('hero')}>
           {t.hero.name}

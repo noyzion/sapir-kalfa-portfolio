@@ -13,7 +13,7 @@
   font-weight: 200;
   color: var(--black);
   margin-bottom: 60px;
-  text-align: right;
+  text-align: start;
   position: relative;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -33,9 +33,10 @@
   font-size: clamp(15px, 1.3vw, 19px);
   line-height: 1.8;
   color: var(--gray);
-  text-align: right;
+  text-align: start;
   max-width: 700px;
-  margin: 0 0 0 auto;
+  margin-inline-start: auto;
+  margin-inline-end: 0;
   font-weight: 300;
 }
 
@@ -53,13 +54,17 @@
 .skill-item {
   background: transparent;
   padding: 0;
-  text-align: right;
+  text-align: start;
   transition: all 0.3s ease;
   border: none;
 }
 
-.skill-item:hover {
+[dir="rtl"] .skill-item:hover {
   transform: translateX(-5px);
+}
+
+[dir="ltr"] .skill-item:hover {
+  transform: translateX(5px);
 }
 
 .skill-item h3 {

@@ -15,6 +15,14 @@
   margin-top: 60px;
 }
 
+[dir="rtl"] .contact-content {
+  grid-template-columns: 1fr 1.5fr;
+}
+
+[dir="ltr"] .contact-content {
+  grid-template-columns: 1.5fr 1fr;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -32,8 +40,12 @@
   margin-bottom: 35px;
 }
 
-.info-item:hover {
+[dir="rtl"] .info-item:hover {
   transform: translateX(-5px);
+}
+
+[dir="ltr"] .info-item:hover {
+  transform: translateX(5px);
 }
 
 .info-icon {
@@ -106,8 +118,15 @@
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  align-self: flex-start;
   margin-top: 30px;
+}
+
+[dir="rtl"] .submit-button {
+  align-self: flex-start;
+}
+
+[dir="ltr"] .submit-button {
+  align-self: flex-start;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   position: relative;
@@ -118,20 +137,35 @@
   content: '';
   position: absolute;
   top: 0;
-  right: -100%;
   width: 100%;
   height: 100%;
   background: var(--black);
-  transition: right 0.3s ease;
   z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+[dir="rtl"] .submit-button::before {
+  right: -100%;
+  transform: translateX(0);
+}
+
+[dir="ltr"] .submit-button::before {
+  left: -100%;
+  transform: translateX(0);
 }
 
 .submit-button:hover {
   color: var(--white);
 }
 
-.submit-button:hover::before {
+[dir="rtl"] .submit-button:hover::before {
   right: 0;
+  transform: translateX(0);
+}
+
+[dir="ltr"] .submit-button:hover::before {
+  left: 0;
+  transform: translateX(0);
 }
 
 @media (max-width: 968px) {

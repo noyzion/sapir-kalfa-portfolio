@@ -9,6 +9,14 @@
   background: var(--white);
 }
 
+[dir="rtl"] .hero {
+  justify-content: flex-end;
+}
+
+[dir="ltr"] .hero {
+  justify-content: flex-start;
+}
+
 .hero-content {
   width: 100%;
   max-width: 1400px;
@@ -70,20 +78,35 @@
   content: '';
   position: absolute;
   top: 0;
-  right: -100%;
   width: 100%;
   height: 100%;
   background: var(--black);
-  transition: right 0.3s ease;
   z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+[dir="rtl"] .hero-button::before {
+  right: -100%;
+  transform: translateX(0);
+}
+
+[dir="ltr"] .hero-button::before {
+  left: -100%;
+  transform: translateX(0);
 }
 
 .hero-button:hover {
   color: var(--white);
 }
 
-.hero-button:hover::before {
+[dir="rtl"] .hero-button:hover::before {
   right: 0;
+  transform: translateX(0);
+}
+
+[dir="ltr"] .hero-button:hover::before {
+  left: 0;
+  transform: translateX(0);
 }
 
 @media (max-width: 968px) {
