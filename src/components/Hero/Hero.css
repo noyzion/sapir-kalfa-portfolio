@@ -24,6 +24,14 @@
   z-index: 2;
 }
 
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+[dir="ltr"] .hero-content {
+  text-align: left;
+}
+
 .hero-title {
   display: flex;
   flex-direction: column;

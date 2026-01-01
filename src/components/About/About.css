@@ -12,11 +12,19 @@
   font-size: clamp(32px, 5vw, 80px);
   font-weight: 200;
   color: var(--black);
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: start;
   position: relative;
   letter-spacing: -0.04em;
   line-height: 1;
+}
+
+[dir="rtl"] .section-title {
+  text-align: right;
+}
+
+[dir="ltr"] .section-title {
+  text-align: left;
 }
 
 .section-title::after {
@@ -26,7 +34,7 @@
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 50px;
+  gap: 0;
 }
 
 .about-text {
@@ -35,20 +43,42 @@
   color: var(--gray);
   text-align: start;
   max-width: 700px;
-  margin-inline-start: auto;
-  margin-inline-end: 0;
   font-weight: 300;
+}
+
+[dir="rtl"] .about-text {
+  text-align: right;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="ltr"] .about-text {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .about-text p {
   margin-bottom: 20px;
 }
 
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
 .about-skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+[dir="rtl"] .skill-item {
+  text-align: right;
+}
+
+[dir="ltr"] .skill-item {
+  text-align: left;
 }
 
 .skill-item {
@@ -102,6 +132,8 @@
   .about-text {
     text-align: center;
     margin: 0 auto;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
 
   .section-title {

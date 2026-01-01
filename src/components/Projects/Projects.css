@@ -18,6 +18,17 @@
   text-transform: uppercase;
 }
 
+.projects-title {
+  text-align: start;
+  font-size: clamp(32px, 5vw, 80px);
+  font-weight: 200;
+  color: var(--black);
+  margin-bottom: 20px;
+  position: relative;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

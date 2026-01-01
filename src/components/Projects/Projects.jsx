@@ -8,7 +8,7 @@ function Projects() {
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
-        <h2 className="section-title">{t.projects.title}</h2>
+        <h2 className="section-title projects-title">{t.projects.title}</h2>
         <p className="section-subtitle">
           {t.projects.subtitle}
         </p>

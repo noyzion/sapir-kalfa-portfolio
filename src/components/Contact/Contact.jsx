@@ -32,8 +32,8 @@ function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <h2 className="section-title">{t.contact.title}</h2>
-        <p className="section-subtitle">
+        <h2 className="section-title contact-title">{t.contact.title}</h2>
+        <p className="section-subtitle contact-subtitle">
           {t.contact.subtitle}
         </p>
         <div className="contact-content">
