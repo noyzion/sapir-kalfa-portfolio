@@ -101,7 +101,9 @@ export const LanguageProvider = ({ children }) => {
           phone: 'טלפון',
           message: 'הודעה',
           submit: 'שלח הודעה',
-          success: 'תודה על פנייתך! אחזור אליך בהקדם.'
+          sending: 'שולח...',
+          success: 'תודה על פנייתך! אחזור אליך בהקדם.',
+          error: 'שגיאה בשליחת ההודעה. נסה שוב מאוחר יותר.'
         }
       }
     },
@@ -183,7 +185,9 @@ export const LanguageProvider = ({ children }) => {
           phone: 'Phone',
           message: 'Message',
           submit: 'Send Message',
-          success: 'Thank you for your message! I will get back to you soon.'
+          sending: 'Sending...',
+          success: 'Thank you for your message! I will get back to you soon.',
+          error: 'Error sending message. Please try again later.'
         }
       }
     }
