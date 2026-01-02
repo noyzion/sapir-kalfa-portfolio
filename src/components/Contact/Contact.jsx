@@ -42,7 +42,7 @@ function Contact() {
               <div className="info-icon">✉</div>
               <div>
                 <h3>{t.contact.email}</h3>
-                <p>sapir.kalfa@example.com</p>
+                <p>noyzion3@gmail.com</p>
               </div>
             </div>
             <div className="info-item">
