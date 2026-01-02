@@ -14,13 +14,16 @@ function Projects() {
         </p>
         <div className="projects-grid">
           {t.projects.items.map((project, index) => (
-            <div key={index} className="project-card">
+            <div key={index} className={`project-card ${index === 0 ? 'project-featured' : ''}`}>
               <div className="project-image">
                 <div className="project-placeholder">
                   <span className="placeholder-icon">🏗️</span>
                 </div>
                 <div className="project-overlay">
-                  <span className="project-category">{project.category}</span>
+                  <div className="project-overlay-content">
+                    <span className="project-category">{project.category}</span>
+                    <h3 className="project-overlay-title">{project.title}</h3>
+                  </div>
                 </div>
               </div>
               <div className="project-info">

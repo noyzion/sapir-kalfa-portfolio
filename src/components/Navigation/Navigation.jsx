@@ -6,10 +6,23 @@ function Navigation() {
   const { language, setLanguage, t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+      
+      // Detect active section
+      const sections = ['hero', 'about', 'projects', 'contact']
+      const scrollPosition = window.scrollY + 200
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i])
+          break
+        }
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -35,9 +48,27 @@ function Navigation() {
         </div>
         <div className="nav-right">
           <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about') }}>{t.nav.about}</a>
-            <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}>{t.nav.projects}</a>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>{t.nav.contact}</a>
+            <a 
+              href="#about" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('about') }}
+              className={activeSection === 'about' ? 'active' : ''}
+            >
+              {t.nav.about}
+            </a>
+            <a 
+              href="#projects" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
+              className={activeSection === 'projects' ? 'active' : ''}
+            >
+              {t.nav.projects}
+            </a>
+            <a 
+              href="#contact" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}
+              className={activeSection === 'contact' ? 'active' : ''}
+            >
+              {t.nav.contact}
+            </a>
           </div>
           <button className="language-switcher" onClick={toggleLanguage}>
             {language === 'he' ? 'EN' : 'עב'}

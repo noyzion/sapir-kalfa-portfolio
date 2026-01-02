@@ -22,6 +22,7 @@
   max-width: 1400px;
   margin: 0 auto;
   z-index: 2;
+  position: relative;
 }
 
 [dir="rtl"] .hero-content {
@@ -30,6 +31,31 @@
 
 [dir="ltr"] .hero-content {
   text-align: left;
+}
+
+
+.hero-side-text {
+  position: absolute;
+  font-size: clamp(10px, 0.9vw, 12px);
+  color: var(--light-gray);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  opacity: 0.4;
+}
+
+[dir="rtl"] .hero-side-text {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+[dir="ltr"] .hero-side-text {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-lr;
 }
 
 .hero-title {
@@ -67,19 +93,27 @@
 }
 
 .hero-button {
-  background: transparent;
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
   border: 1px solid var(--black);
-  padding: 18px 60px;
+  padding: 20px 70px;
   font-size: 13px;
   font-weight: 300;
   border-radius: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
+}
+
+.hero-button:hover {
+  background: transparent;
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hero-button::before {
@@ -162,6 +196,10 @@
     font-size: 12px;
     width: 100%;
     max-width: 300px;
+  }
+
+  .hero-side-text {
+    display: none;
   }
 }
 

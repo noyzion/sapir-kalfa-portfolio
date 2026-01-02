@@ -10,16 +10,19 @@ function About() {
       <div className="about-container">
         <div className="about-content">
           <h2 className="section-title">{t.about.title}</h2>
-          <div className="about-text">
-            <p>{t.about.text1}</p>
-            <p>{t.about.text2}</p>
+          <div className="about-text-wrapper">
+            <div className="about-text">
+              <p>{t.about.text1}</p>
+              <p className="about-highlight">{t.about.text2}</p>
+            </div>
+            <div className="about-side-element"></div>
           </div>
           <div className="about-skills">
             <div className="skill-item">
               <h3>{t.about.skill1.title}</h3>
               <p>{t.about.skill1.desc}</p>
             </div>
-            <div className="skill-item">
+            <div className="skill-item skill-item-tall">
               <h3>{t.about.skill2.title}</h3>
               <p>{t.about.skill2.desc}</p>
             </div>

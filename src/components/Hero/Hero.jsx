@@ -25,6 +25,7 @@ function Hero() {
         <button className="hero-button" onClick={scrollToProjects}>
           {t.hero.button}
         </button>
+        <div className="hero-side-text">{t.hero.subtitle}</div>
       </div>
     </section>
   )

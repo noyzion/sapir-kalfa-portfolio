@@ -91,6 +91,7 @@ export const LanguageProvider = ({ children }) => {
       contact: {
         title: 'צור קשר',
         subtitle: 'מעוניין בפגישת ייעוץ? אשמח לשמוע ממך',
+        humanText: 'מעוניינת ללוות אתכם מהרעיון ועד הביצוע',
         email: 'אימייל',
         phone: 'טלפון',
         address: 'כתובת',
@@ -172,9 +173,10 @@ export const LanguageProvider = ({ children }) => {
           }
         ]
       },
-      contact: {
-        title: 'Contact',
-        subtitle: 'Interested in a consultation? I would love to hear from you',
+        contact: {
+          title: 'Contact',
+          subtitle: 'Interested in a consultation? I would love to hear from you',
+          humanText: 'Ready to guide you from concept to completion',
         email: 'Email',
         phone: 'Phone',
         address: 'Address',
