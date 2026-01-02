@@ -58,11 +58,18 @@
 }
 
 .info-icon {
-  font-size: 20px;
   min-width: 30px;
-  text-align: center;
-  opacity: 0.4;
-  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.info-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .info-item h3 {
@@ -79,11 +86,35 @@
   font-weight: 300;
   line-height: 1.7;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 .info-item a:hover {
   color: var(--black);
+}
+
+.info-item a:active {
+  opacity: 0.7;
+}
+
+.info-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--black);
+  transition: width 0.3s ease;
+}
+
+.info-item a:hover::after {
+  width: 100%;
 }
 
 
